@@ -1,0 +1,68 @@
+[
+{
+    "model": "articles.comment",
+    "pk": 1,
+    "fields": {
+        "article": 1,
+        "user": 1,
+        "content": "반사",
+        "created_at": "2023-10-17T00:20:12.569Z",
+        "updated_at": "2023-10-17T00:20:12.569Z"
+    }
+},
+{
+    "model": "articles.comment",
+    "pk": 2,
+    "fields": {
+        "article": 1,
+        "user": 1,
+        "content": "얼탱",
+        "created_at": "2023-10-17T00:20:16.968Z",
+        "updated_at": "2023-10-17T00:20:16.968Z"
+    }
+},
+{
+    "model": "articles.comment",
+    "pk": 3,
+    "fields": {
+        "article": 2,
+        "user": 1,
+        "content": "보바",
+        "created_at": "2023-10-17T00:20:21.681Z",
+        "updated_at": "2023-10-17T00:20:21.681Z"
+    }
+},
+{
+    "model": "articles.comment",
+    "pk": 4,
+    "fields": {
+        "article": 2,
+        "user": 1,
+        "content": "ㅋㅋ",
+        "created_at": "2023-10-17T00:20:24.000Z",
+        "updated_at": "2023-10-17T00:20:24.000Z"
+    }
+},
+{
+    "model": "articles.comment",
+    "pk": 5,
+    "fields": {
+        "article": 4,
+        "user": 2,
+        "content": "ㅂㅈㄷㅂㅈㄱㅂㅈㄱㅂㅈㄱ",
+        "created_at": "2023-10-17T01:32:00.896Z",
+        "updated_at": "2023-10-17T01:32:00.896Z"
+    }
+},
+{
+    "model": "articles.comment",
+    "pk": 6,
+    "fields": {
+        "article": 3,
+        "user": 1,
+        "content": "sdfffsdfs",
+        "created_at": "2023-10-17T01:32:20.448Z",
+        "updated_at": "2023-10-17T01:32:20.448Z"
+    }
+}
+]

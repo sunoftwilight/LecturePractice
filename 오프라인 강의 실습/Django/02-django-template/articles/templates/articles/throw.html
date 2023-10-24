@@ -1,0 +1,8 @@
+{% extends "base.html" %}
+
+{% block content %}
+  <form action="{% url "articles:catch" %}" method="GET">
+    <input type="text" name="message">
+    <input type="submit">
+  </form>
+{% endblock content %}

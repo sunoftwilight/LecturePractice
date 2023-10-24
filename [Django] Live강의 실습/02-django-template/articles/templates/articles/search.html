@@ -1,0 +1,11 @@
+{% extends "articles/base.html" %}
+
+{% block content %}
+  <h1>fake NAVER</h1>
+  <form action="https://search.naver.com/search.naver/" method="GET">
+    <label for="message">검색어: </label>
+    <input type="text" name="query" id="message">
+    {% comment %} 서버에 데이터를 전송하기 위한 submit {% endcomment %}
+    <input type="submit">  
+  </form>
+{% endblock content %}

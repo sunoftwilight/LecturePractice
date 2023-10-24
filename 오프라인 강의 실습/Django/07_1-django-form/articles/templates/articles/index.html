@@ -1,0 +1,23 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Document</title>
+</head>
+<body>
+  <h1>INDEX</h1>
+  <a href="{% url 'articles:create' %}">CREATE</a>
+  <hr>
+  {% for article in articles %}
+    <h4>이 글은 <{{ article.pk }}>번째 글이다 !!!!</h4>
+    <a href="{%  url 'articles:detail' article.pk %}">
+      글 제목은 " {{ article.title }} " 이다
+    </a>
+    <p>글 내용은 " {{ article.content }} " 이다</p>
+    <hr>
+  {% empty %}
+    <p>글이 존재하지 않습니다</p>
+  {% endfor %}
+</body>
+</html>

@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Document</title>
+</head>
+<body>
+  <h1>DETAIL</h1>
+  <h3>{{ article.pk }}번째 글이당면ㅋ</h3>
+  <hr>
+  <p>제목은 " {{ article.title }} " 이다 ㅋ</p>
+  <p>내용은 " {{ article.content }} " 이다 ㅋ</p>
+  <p>[ {{ article.created_at }} ] 에 썼다 ㅋ</p>
+  <p>[ {{ article.updated_at }} ] 에 고쳤다 ㅋ</p>
+
+  <hr>
+
+  <a href="{% url 'articles:update' article.pk %}"> [ UPDATE ] </a>
+
+  <form action="{% url 'articles:delete' article.pk %}">
+    {% csrf_token %}
+    <input type="submit" value="DELETE">
+  </form>
+
+  <a href="{% url 'articles:index' %}">[ BACK ]</a>
+</body>
+</html>

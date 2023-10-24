@@ -1,0 +1,70 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Document</title>
+  <style>
+    * {
+      color: red;
+    }
+
+    h2 {
+      color: orange;
+    }
+
+    h3, h4 {
+      color: blue;
+    }
+
+    /* 내가 만약에 h1, ul, p 태그 모두 초록으로 만들고 싶다면? 
+      : 태그 하나하나 주기엔 번거로움 
+        => class 속성 사용!! */
+    .green {
+      color: green;
+    }
+
+    #purple {
+      color: purple;
+    }
+
+    /* 자식 결합자 */     
+    /* 만약 green 클래스 안에 span 속성이 있다면, 50px 크기로 변경할게 */
+    .green > span {
+      font-size: 50px;
+    }
+
+    /* 자손 결합자 */
+    .green li {
+      color: brown;
+    }
+
+    .make-text-red {
+      color: red;
+    }
+  </style>
+</head>
+
+<body>
+  <h1 class="green make-text-red">Heading</h1>
+  <h2>선택자</h2>
+  <h3>연습</h3>
+  <h4>반가워요</h4>
+  <p id="purple">과목 목록</p>
+  <ul class="green">
+    <li>파이썬</li>
+    <li>알고리즘</li>
+    <li>웹
+      <ol>
+        <li>HTML</li>
+        <li>CSS</li>
+        <li>PYTHON</li>
+      </ol>
+    </li>
+  </ul>
+  <p class="green">Lorem, <span>ipsum</span> dolor.</p>
+</body>
+
+</html>
