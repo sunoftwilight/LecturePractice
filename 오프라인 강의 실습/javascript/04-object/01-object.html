@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Document</title>
+</head>
+
+<body>
+  <script>
+    const user = {
+      name: 'Alice',
+      'key with space': true,
+      greeting: function () {
+        return 'hello'
+      }
+    }
+
+    // 조회
+    console.log(user.name)
+    console.log(user['key with space'])
+
+    // 추가
+    user.address = '구미'
+    console.log(user.address)
+
+    // 수정
+    user.name = 'BBu'
+    console.log(user.name)
+
+    // 삭제
+    delete user.name
+    console.log(user)
+
+  </script>
+</body>
+
+</html>
