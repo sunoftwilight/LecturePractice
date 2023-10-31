@@ -10,11 +10,12 @@
 
   <div>
     <div>
-      팔로잉 : {{ person.followings.all|length }} / 팔로워 : {{ person.followers.all|length }}
+      팔로잉 : <span id="followings-count">{{ person.followings.all|length }}</span> / 
+      팔로워 : <span id="followers-count">{{ person.followers.all|length }}</span>
     </div>
     {% if request.user != person and request.user.is_authenticated %}
       <div>
-        <form action="{% url "accounts:follow" person.pk %}" method="POST">
+        <form id="follow-form" data-user-id="{{ person.pk }}">
           {% csrf_token %}
           {% if request.user in person.followers.all %}
             <input type="submit" value="Unfollow">
@@ -50,5 +51,44 @@
   <hr>
 
   <a href="{% url "articles:index" %}">[back]</a>
+
+  <script src="https://cdn.jsdelivr.net/npm/axios/dist/axios.min.js"></script>
+
+  <script>
+    const formTag = document.querySelector('#follow-form')
+    const csrftoken = document.querySelector('[name=csrfmiddlewaretoken]').value
+    // console.log(formTag)
+    formTag.addEventListener('submit', function (event) {
+      event.preventDefault()
+
+      const userId = formTag.dataset.userId
+
+      axios({
+        method: "POST",
+        url: `/accounts/${userId}/follow/`,
+        headers: {'X-CSRFToken': csrftoken},
+      })
+        .then((res) => {
+          // console.log(res)
+          const isFollowed = res.data.is_followed
+          const followBtn = document.querySelector('#follow-form > input[type=submit]:nth-child(2)')
+
+          if (isFollowed === true) {
+            followBtn.value = "Unfollow"
+          } else {
+            followBtn.value = "Follow"
+          }
+
+          const followingsCountTag = document.querySelector('#followings-count')
+          const followersCountTag = document.querySelector('#followers-count')
+          
+          followingsCountTag.textContent = res.data.followings_count
+          followersCountTag.textContent = res.data.followers_count
+        })
+        .catch((err) => {
+          console.log(err)
+        })
+    })
+  </script>
 </body>
 </html>
