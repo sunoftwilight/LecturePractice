@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Document</title>
+</head>
+
+<body>
+  <div id="app">
+    <h1>{{ greeting }}</h1>
+    <button @click="count++">{{ count }}</button>
+    <p>{{ count }}</p>
+    <h3>{{ count }}</h3>
+  </div>
+
+  <script src="https://unpkg.com/vue@3/dist/vue.global.js"></script>
+
+
+  <script>
+    // 구조분해할당 : vue 객체에 내장된 createApp, ref를 createApp, ref라는 변수에 담아 가져오겠다
+    const { createApp, ref } = Vue
+
+    const app = createApp({
+      setup () {
+        const count = ref(0)
+        const greeting = ref('Hello')
+
+        // 객체 하나를 리턴 (객체이므로 key, value 형태로 반환)
+        return {
+          count,
+          greeting,
+        }
+      }
+    })
+
+    app.mount('#app')
+  </script>
+</body>
+
+</html>
